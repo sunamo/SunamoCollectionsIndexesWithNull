@@ -1,0 +1,61 @@
+name: Build SunamoCollectionsIndexesWithNull
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+jobs:
+  build:
+    name: Build SunamoCollectionsIndexesWithNull
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore SunamoCollectionsIndexesWithNull/SunamoCollectionsIndexesWithNull.csproj
+
+    - name: Build
+      run: dotnet build SunamoCollectionsIndexesWithNull/SunamoCollectionsIndexesWithNull.csproj --configuration Release --no-restore
+
+  test:
+    name: Test SunamoCollectionsIndexesWithNull.Tests
+    runs-on: ${{ matrix.os }}
+    needs: build
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore SunamoCollectionsIndexesWithNull.Tests/SunamoCollectionsIndexesWithNull.Tests.csproj
+
+    - name: Build tests
+      run: dotnet build SunamoCollectionsIndexesWithNull.Tests/SunamoCollectionsIndexesWithNull.Tests.csproj --configuration Release --no-restore
+
+    - name: Run tests
+      run: dotnet test SunamoCollectionsIndexesWithNull.Tests/SunamoCollectionsIndexesWithNull.Tests.csproj --configuration Release --no-build --verbosity normal
+      continue-on-error: true
