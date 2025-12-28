@@ -1,3 +1,5 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 namespace SunamoCollectionsIndexesWithNull;
 
 public class CAIndexesWithNull
@@ -5,36 +7,36 @@ public class CAIndexesWithNull
     /// <summary>
     ///     Dont trim
     /// </summary>
-    /// <param name="times"></param>
-    public static List<int> IndexesWithNullOrEmpty(IList times)
+    /// <param name="items"></param>
+    public static List<int> IndexesWithNullOrEmpty(IList items)
     {
-        var nulled = new List<int>();
+        var nullIndexes = new List<int>();
         var i = 0;
-        foreach (var item in times)
+        foreach (var item in items)
         {
             if (item == null)
-                nulled.Add(i);
-            else if (item.ToString() == string.Empty) nulled.Add(i);
+                nullIndexes.Add(i);
+            else if (item.ToString() == string.Empty) nullIndexes.Add(i);
             i++;
         }
 
-        return nulled;
+        return nullIndexes;
     }
 
     /// <summary>
     ///     For all types
     /// </summary>
-    /// <param name="times"></param>
-    public static List<int> IndexesWithNull(IList times)
+    /// <param name="items"></param>
+    public static List<int> IndexesWithNull(IList items)
     {
-        var nulled = new List<int>();
+        var nullIndexes = new List<int>();
         var i = 0;
-        foreach (var item in times)
+        foreach (var item in items)
         {
-            if (item == null) nulled.Add(i);
+            if (item == null) nullIndexes.Add(i);
             i++;
         }
 
-        return nulled;
+        return nullIndexes;
     }
 }
