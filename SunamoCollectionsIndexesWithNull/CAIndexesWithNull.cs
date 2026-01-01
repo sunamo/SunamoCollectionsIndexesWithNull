@@ -1,38 +1,43 @@
 namespace SunamoCollectionsIndexesWithNull;
 
+/// <summary>
+/// Provides utility methods for finding indexes of null or empty elements in collections
+/// </summary>
 public class CAIndexesWithNull
 {
     /// <summary>
-    ///     Dont trim
+    /// Returns a list of indexes where elements are either null or empty strings
     /// </summary>
-    /// <param name="items"></param>
+    /// <param name="items">The collection to search for null or empty elements</param>
+    /// <returns>A list of indexes where elements are null or have empty string representation</returns>
     public static List<int> IndexesWithNullOrEmpty(IList items)
     {
         var nullIndexes = new List<int>();
-        var i = 0;
+        var currentIndex = 0;
         foreach (var item in items)
         {
             if (item == null)
-                nullIndexes.Add(i);
-            else if (item.ToString() == string.Empty) nullIndexes.Add(i);
-            i++;
+                nullIndexes.Add(currentIndex);
+            else if (item.ToString() == string.Empty) nullIndexes.Add(currentIndex);
+            currentIndex++;
         }
 
         return nullIndexes;
     }
 
     /// <summary>
-    ///     For all types
+    /// Returns a list of indexes where elements are null
     /// </summary>
-    /// <param name="items"></param>
+    /// <param name="items">The collection to search for null elements</param>
+    /// <returns>A list of indexes where elements are null</returns>
     public static List<int> IndexesWithNull(IList items)
     {
         var nullIndexes = new List<int>();
-        var i = 0;
+        var currentIndex = 0;
         foreach (var item in items)
         {
-            if (item == null) nullIndexes.Add(i);
-            i++;
+            if (item == null) nullIndexes.Add(currentIndex);
+            currentIndex++;
         }
 
         return nullIndexes;
