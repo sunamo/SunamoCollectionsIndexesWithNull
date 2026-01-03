@@ -8,13 +8,13 @@ public class CAIndexesWithNull
     /// <summary>
     /// Returns a list of indexes where elements are either null or empty strings
     /// </summary>
-    /// <param name="items">The collection to search for null or empty elements</param>
+    /// <param name="list">The collection to search for null or empty elements</param>
     /// <returns>A list of indexes where elements are null or have empty string representation</returns>
-    public static List<int> IndexesWithNullOrEmpty(IList items)
+    public static List<int> IndexesWithNullOrEmpty(IList list)
     {
         var nullIndexes = new List<int>();
         var currentIndex = 0;
-        foreach (var item in items)
+        foreach (var item in list)
         {
             if (item == null)
                 nullIndexes.Add(currentIndex);
@@ -28,13 +28,13 @@ public class CAIndexesWithNull
     /// <summary>
     /// Returns a list of indexes where elements are null
     /// </summary>
-    /// <param name="items">The collection to search for null elements</param>
+    /// <param name="list">The collection to search for null elements</param>
     /// <returns>A list of indexes where elements are null</returns>
-    public static List<int> IndexesWithNull(IList items)
+    public static List<int> IndexesWithNull(IList list)
     {
         var nullIndexes = new List<int>();
         var currentIndex = 0;
-        foreach (var item in items)
+        foreach (var item in list)
         {
             if (item == null) nullIndexes.Add(currentIndex);
             currentIndex++;
