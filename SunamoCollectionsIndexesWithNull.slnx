@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SunamoCollectionsIndexesWithNull.Tests\\SunamoCollectionsIndexesWithNull.Tests.csproj" />
+  <Project Path="RunnerCollectionsIndexesWithNull\\RunnerCollectionsIndexesWithNull.csproj" />
+  <Project Path="SunamoCollectionsIndexesWithNull\SunamoCollectionsIndexesWithNull.csproj" />
+</Solution>
