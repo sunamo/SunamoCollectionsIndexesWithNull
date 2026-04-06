@@ -1,13 +1,9 @@
 // variables names: ok
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 namespace SunamoCollectionsIndexesWithNull._sunamo.SunamoExceptions;
+
+/// <summary>
+/// Provides shared exception throwing utilities.
+/// </summary>
 internal partial class ThrowEx
 {
-
-
-    #region Other
-
-
-    #endregion
 }

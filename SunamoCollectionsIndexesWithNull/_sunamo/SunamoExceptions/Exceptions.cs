@@ -1,15 +1,10 @@
 namespace SunamoCollectionsIndexesWithNull._sunamo.SunamoExceptions;
 
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
-// © www.sunamo.cz. All Rights Reserved.
+/// <summary>
+/// Provides shared exception-related utilities and additional info buffers.
+/// </summary>
 internal sealed partial class Exceptions
 {
-    #region Other
-
-#region IsNullOrWhitespace
-    internal readonly static StringBuilder AdditionalInfoInnerStringBuilder = new();
-    internal readonly static StringBuilder AdditionalInfoStringBuilder = new();
-    #endregion
-#endregion
+    internal static readonly StringBuilder AdditionalInfoInnerStringBuilder = new();
+    internal static readonly StringBuilder AdditionalInfoStringBuilder = new();
 }

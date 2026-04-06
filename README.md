@@ -1,6 +1,6 @@
 # SunamoCollectionsIndexesWithNull
 
-To change from arrays to List&lt;T&gt; to create the required number of dummy elements in List&lt;T&gt;
+Utility library for finding indexes of null or empty elements in collections.
 
 ## Overview
 
@@ -10,12 +10,12 @@ SunamoCollectionsIndexesWithNull is part of the Sunamo package ecosystem, provid
 
 ### Key Classes
 
-- **CAIndexesWithNull**
+- **CAIndexesWithNull** - Provides methods for finding indexes of null or empty elements in collections.
 
 ### Key Methods
 
-- `IndexesWithNullOrEmpty()`
-- `IndexesWithNull()`
+- `IndexesWithNullOrEmpty(IList list)` - Returns indexes where elements are null or have empty string representation.
+- `IndexesWithNull(IList list)` - Returns indexes where elements are null.
 
 ## Installation
 
@@ -25,15 +25,13 @@ dotnet add package SunamoCollectionsIndexesWithNull
 
 ## Dependencies
 
-- **Microsoft.Extensions.Logging.Abstractions** (v9.0.3)
+- **Microsoft.Extensions.Logging.Abstractions** (v10.0.2)
 
 ## Package Information
 
 - **Package Name**: SunamoCollectionsIndexesWithNull
-- **Version**: 25.3.29.1
-- **Target Framework**: net9.0
-- **Category**: Platform-Independent NuGet Package
-- **Source Files**: 6
+- **Target Frameworks**: net10.0; net9.0; net8.0
+- **License**: MIT
 
 ## Related Packages
 
@@ -41,4 +39,4 @@ This package is part of the Sunamo package ecosystem. For more information about
 
 ## License
 
-See the repository root for license information.
+MIT - See the repository root for license information.
