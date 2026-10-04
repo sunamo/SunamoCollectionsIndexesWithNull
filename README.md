@@ -1,5 +1,10 @@
 # SunamoCollectionsIndexesWithNull
 
+## Short description
+
+Pomocná knihovna pro hledání indexů prvků, které jsou null nebo prázdné, v kolekcích.
+
+
 Utility library for finding indexes of null or empty elements in collections.
 
 ## Overview
